@@ -11,8 +11,8 @@ class MessageEngine:
     def getChatObject(cls,chatObject):
         message = chatObject["message"]
         chat = message["chat"]
-        UserDb.getUsers()
-        UserDb.insertUser(chat)
+       
+        UserDb.insertUser(chat, message['text'])
         print("chatobject" , chatObject)
         result = cls.sendMessage(chat  , message['text'])
         if result:
